@@ -18,11 +18,12 @@ class App extends React.Component {
   };
 
   processSearchQuery = ({ inputValue }) => {
-    if (inputValue !== this.state.searchQuery) {
-      this.setState({ imagesArr: [] });
+    if (inputValue === this.state.searchQuery) {
+      return;
+    } else {
+      this.setState({ searchQuery: inputValue.toLowerCase(), imagesArr: [], page: 1 });
     }
-
-    this.setState({ searchQuery: inputValue.toLowerCase() });
+   
   };
 
   loadMoreImages = () => {
