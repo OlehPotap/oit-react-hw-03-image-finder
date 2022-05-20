@@ -1,9 +1,7 @@
 import React from 'react';
 import s from '../ImageGalleryItem/ImageGalleryItem.module.css';
 
-class ImageGalleryItem extends React.Component {
-  render() {
-    const { src, alt, largeImageURL, handleClick } = this.props;
+const ImageGalleryItem = ({ src, alt, largeImageURL, handleClick })=> {
     return (
       <li className={s.ImageGalleryItem}>
         <img
@@ -14,7 +12,6 @@ class ImageGalleryItem extends React.Component {
         />
       </li>
     );
-  }
 }
 
 export default ImageGalleryItem;
